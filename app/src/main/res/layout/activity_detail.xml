@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb_detail"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/softPink"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:titleTextColor="@color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_profile"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/user1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:contentDescription="@string/todo" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/title_bg"
+                app:layout_constraintBottom_toTopOf="@+id/cv_detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_name_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="28dp"
+                    android:paddingTop="18dp"
+                    android:paddingEnd="28dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/valendion_pradana_pasalu"
+                    android:textColor="@color/softPink"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:text="@string/valendion"
+                    android:drawablePadding="8dp"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name_detail"
+                    app:drawableLeftCompat="@drawable/ic_id_card" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cv_detail"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:paddingBottom="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_profile">
+
+                <TextView
+                    android:id="@+id/tv_repo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/repository"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_follower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/follower"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_following"
+                    app:layout_constraintStart_toEndOf="@+id/tv_repo"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_following"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/following"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tv_follower"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_value_repository"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_17"
+                    android:textColor="@color/softPink"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_repo"
+                    app:layout_constraintStart_toStartOf="@+id/tv_repo"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_repo" />
+
+                <TextView
+                    android:id="@+id/tv_value_follower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_17"
+                    android:textColor="@color/softPink"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_follower"
+                    app:layout_constraintStart_toStartOf="@+id/tv_follower"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_follower" />
+
+                <TextView
+                    android:id="@+id/tv_value_following"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_17"
+                    android:textColor="@color/softPink"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_following"
+                    app:layout_constraintStart_toStartOf="@+id/tv_following"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_following" />
+
+                <TextView
+                    android:id="@+id/tv_company_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:drawablePadding="8dp"
+                    android:text="@string/stmik_dipanegara_makassar"
+                    android:textSize="14sp"
+                    app:drawableLeftCompat="@drawable/ic_company"
+                    app:layout_constraintStart_toStartOf="@+id/tv_repo"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_value_repository" />
+
+                <TextView
+                    android:id="@+id/tv_location_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:drawablePadding="8dp"
+                    android:text="@string/indonesia_parepare"
+                    android:textSize="14sp"
+                    app:drawableLeftCompat="@drawable/ic_location"
+                    app:layout_constraintStart_toStartOf="@+id/tv_company_detail"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_company_detail" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
